@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 function Data() {
     const [cdata, setCdata] = useState([])
     const getData = async () => {
-        await fetch("https://disease.sh/v3/covid-19/gov/India/ ").then((res) => res.json()).then((data) => {
+        await fetch("https://data.covid19india.org/v4/min/data.min.json ").then((res) => res.json()).then((data) => {
             setCdata(data.states);
         }).catch((err)=>{
             console.log(err)
@@ -26,11 +26,11 @@ function Data() {
                     <thead>
                         <tr>
                             <th scope="col"></th>
-                            <th scope="col">State</th>
-                            <th scope="col"> Total Cases</th>
-                            <th scope="col">Today Active</th>
-                            <th scope="col">Today Recovered</th>
-                            <th scope="col">Today Deaths</th>
+                            <th scope="col">Confirmed</th>
+                            <th scope="col"> Recovered</th>
+                            <th scope="col">Tested</th>
+                            <th scope="col">vaccinated1</th>
+                            <th scope="col">vaccinated2</th>
                         </tr>
                     </thead>
 
